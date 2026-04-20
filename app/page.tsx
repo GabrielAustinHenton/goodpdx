@@ -2,125 +2,193 @@ import Link from 'next/link'
 import SearchBar from './components/SearchBar'
 
 const categories = [
-  { label: 'Food & Drink', href: '/goodfood', emoji: '🍽️', desc: 'Restaurants, bars, food carts' },
-  { label: 'Coffee', href: '/coffee', emoji: '☕', desc: 'Cafés & roasters' },
-  { label: 'Parks', href: '/parks', emoji: '🌲', desc: 'Green spaces & trails' },
-  { label: 'Hikes', href: '/hikes', emoji: '🥾', desc: 'Day hikes near Portland' },
-  { label: 'Arts', href: '/art', emoji: '🎨', desc: 'Galleries & public art' },
-  { label: 'Music', href: '/music', emoji: '🎵', desc: 'Venues & local artists' },
-  { label: 'Film & Stage', href: '/filmandstage', emoji: '🎭', desc: 'Theaters & cinemas' },
-  { label: 'History', href: '/history', emoji: '📜', desc: 'Portland\'s story' },
-  { label: 'Hot Springs', href: '/hotsprings', emoji: '♨️', desc: 'Natural soaks nearby' },
-  { label: 'Swimming', href: '/swim', emoji: '🏊', desc: 'Pools & swimming holes' },
-  { label: 'Manufacturing', href: '/manufacturing', emoji: '🏭', desc: 'Made in Portland' },
-  { label: 'Health & Beauty', href: '/healthbeauty', emoji: '💆', desc: 'Wellness & self-care' },
-  { label: 'Infrastructure', href: '/infrastructure', emoji: '🏗️', desc: 'How our city works' },
-  { label: 'Bridges', href: '/bridges', emoji: '🌉', desc: 'Portland\'s iconic spans' },
-  { label: 'Airport', href: '/airport', emoji: '✈️', desc: 'PDX & getting around' },
-  { label: 'Transportation', href: '/transportation', emoji: '🚊', desc: 'TriMet, bikes & more' },
-  { label: 'Development', href: '/development', emoji: '🏘️', desc: 'Neighborhoods & growth' },
-  { label: 'Directory', href: '/directory', emoji: '📋', desc: 'All Portland businesses' },
+  { label: 'Food & Drink', href: '/goodfood', emoji: '🍽️' },
+  { label: 'Coffee', href: '/coffee', emoji: '☕' },
+  { label: 'Parks', href: '/parks', emoji: '🌲' },
+  { label: 'Hikes', href: '/hikes', emoji: '🥾' },
+  { label: 'Arts', href: '/art', emoji: '🎨' },
+  { label: 'Music', href: '/music', emoji: '🎵' },
+  { label: 'Film & Stage', href: '/filmandstage', emoji: '🎭' },
+  { label: 'History', href: '/history', emoji: '📜' },
+  { label: 'Hot Springs', href: '/hotsprings', emoji: '♨️' },
+  { label: 'Swimming', href: '/swim', emoji: '🏊' },
+  { label: 'Made Here', href: '/manufacturing', emoji: '🏭' },
+  { label: 'Wellness', href: '/healthbeauty', emoji: '💆' },
+  { label: 'Infrastructure', href: '/infrastructure', emoji: '🏗️' },
+  { label: 'Bridges', href: '/bridges', emoji: '🌉' },
+  { label: 'Airport', href: '/airport', emoji: '✈️' },
+  { label: 'Transit', href: '/transportation', emoji: '🚊' },
+  { label: 'Development', href: '/development', emoji: '🏘️' },
+  { label: 'Directory', href: '/directory', emoji: '📋' },
 ]
 
-const featuredNews = [
+const featuredStories = [
   {
-    tag: 'Community Spotlight',
-    title: 'Building a Better Portland: Why Benefit Companies Matter',
-    excerpt: 'Good PDX LLC is registered as an Oregon Benefit Company — here\'s what that means for you and your community.',
+    tag: 'Community',
+    title: 'Why Good PDX is a Benefit Company',
+    excerpt: 'Our LLC is structured to serve the community, not just shareholders — here\'s what that means in practice.',
     href: '/blog',
+    accent: '#1d4a2f',
   },
   {
-    tag: 'Food & Drink',
-    title: 'Portland\'s Food Cart Scene: A Living Tradition',
-    excerpt: 'From Alberta Arts District to SE Division, Portland\'s food carts are more than just a meal — they\'re a way of life.',
+    tag: 'Food',
+    title: 'Portland\'s Food Cart Scene',
+    excerpt: 'From Alberta Arts to SE Division, food carts are the pulse of Portland\'s culinary identity.',
     href: '/goodfood',
+    accent: '#d47c2f',
   },
   {
     tag: 'History',
-    title: 'Vanport: The City Portland Forgot',
-    excerpt: 'The 1948 flood erased Oregon\'s second-largest city overnight. Understanding Vanport is essential to understanding Portland today.',
+    title: 'Vanport: The City We Forgot',
+    excerpt: 'The 1948 flood erased Oregon\'s second-largest city overnight. Understanding Vanport means understanding Portland.',
     href: '/history',
+    accent: '#5a4a3a',
   },
+]
+
+const stats = [
+  { value: '650K+', label: 'Portlanders' },
+  { value: '18', label: 'Neighborhoods' },
+  { value: '12', label: 'Bridges' },
+  { value: '1851', label: 'Founded' },
 ]
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen">
+
       {/* Hero */}
-      <section className="bg-green-800 text-white py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Discover Good PDX
-          </h1>
-          <p className="text-green-200 text-lg mb-10 max-w-xl mx-auto">
-            Your community guide to Portland — businesses, history, food, arts, and everything in between.
-          </p>
-          <SearchBar />
-        </div>
-      </section>
+      <section className="relative bg-[#1d4a2f] overflow-hidden">
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-5"
+          style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px'}}
+        />
+        {/* Gradient fade bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f7f4] to-transparent" />
 
-      {/* Category Grid */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8">Explore Portland</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          {categories.map((cat) => (
-            <Link
-              key={cat.href}
-              href={cat.href}
-              className="flex flex-col items-center text-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 hover:shadow-md transition-all group"
-            >
-              <span className="text-3xl mb-2">{cat.emoji}</span>
-              <span className="text-sm font-semibold text-gray-800 group-hover:text-green-700">{cat.label}</span>
-              <span className="text-xs text-gray-400 mt-1 leading-tight">{cat.desc}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured News */}
-      <section className="bg-white border-t border-gray-100 py-14">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-gray-800">From the Community</h2>
-            <Link href="/blog" className="text-sm text-green-700 hover:text-green-800 font-medium">
-              View all →
-            </Link>
+        <div className="relative max-w-6xl mx-auto px-5 pt-20 pb-32 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-1.5 text-sm text-green-200 mb-8 border border-white/10">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            Portland, Oregon
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {featuredNews.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group block bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-green-300 hover:shadow-md transition-all"
-              >
-                <span className="inline-block text-xs font-semibold text-green-700 bg-green-50 px-2 py-1 rounded-full mb-3">
-                  {item.tag}
-                </span>
-                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-green-800 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.excerpt}</p>
-              </Link>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+            The good side<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-200">
+              of Portland
+            </span>
+          </h1>
+
+          <p className="text-green-100/80 text-lg md:text-xl mb-12 max-w-lg mx-auto leading-relaxed">
+            Discover local businesses, history, parks, arts, and everything that makes Portland worth loving.
+          </p>
+
+          <SearchBar />
+
+          {/* Stats */}
+          <div className="mt-16 grid grid-cols-4 gap-4 max-w-lg mx-auto">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-2xl font-bold text-white">{s.value}</div>
+                <div className="text-xs text-green-300/70 mt-0.5">{s.label}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Community CTA */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
-        <div className="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
-          <h2 className="text-2xl font-bold text-green-900 mb-3">Own a Portland business?</h2>
-          <p className="text-green-700 mb-6 max-w-lg mx-auto">
-            Join Good PDX to connect with other local businesses, reach customers, and be part of something bigger than the bottom line.
-          </p>
-          <Link
-            href="/sign-up"
-            className="inline-block bg-green-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-800 transition-colors"
-          >
-            Join the community
-          </Link>
+      {/* Category Grid */}
+      <section className="max-w-6xl mx-auto px-5 py-16">
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Browse</p>
+            <h2 className="text-3xl font-bold text-gray-900">Explore Portland</h2>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+          {categories.map((cat) => (
+            <Link
+              key={cat.href}
+              href={cat.href}
+              className="group flex flex-col items-center text-center p-4 bg-white rounded-2xl border border-gray-100 hover:border-[#2d6a4f]/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <span className="text-2xl mb-2">{cat.emoji}</span>
+              <span className="text-xs font-semibold text-gray-700 group-hover:text-[#1d4a2f] leading-tight">{cat.label}</span>
+            </Link>
+          ))}
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="max-w-6xl mx-auto px-5">
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      </div>
+
+      {/* Featured Stories */}
+      <section className="max-w-6xl mx-auto px-5 py-16">
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Stories</p>
+            <h2 className="text-3xl font-bold text-gray-900">From the Community</h2>
+          </div>
+          <Link href="/blog" className="text-sm text-[#1d4a2f] hover:text-[#2d6a4f] font-semibold flex items-center gap-1">
+            All stories <span>→</span>
+          </Link>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-5">
+          {featuredStories.map((story) => (
+            <Link
+              key={story.title}
+              href={story.href}
+              className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              {/* Color bar */}
+              <div className="h-1.5 w-full" style={{ backgroundColor: story.accent }} />
+              <div className="p-6">
+                <span className="inline-block text-xs font-bold uppercase tracking-wider mb-3"
+                  style={{ color: story.accent }}>
+                  {story.tag}
+                </span>
+                <h3 className="font-bold text-gray-900 text-lg mb-2 leading-snug group-hover:text-[#1d4a2f] transition-colors">
+                  {story.title}
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{story.excerpt}</p>
+                <div className="mt-4 text-xs font-semibold flex items-center gap-1" style={{ color: story.accent }}>
+                  Read more <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-5 pb-16">
+        <div className="relative bg-[#1d4a2f] rounded-3xl overflow-hidden">
+          <div className="absolute inset-0 opacity-5"
+            style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px'}}
+          />
+          <div className="relative px-10 py-14 md:flex items-center justify-between gap-8">
+            <div>
+              <p className="text-green-300 text-sm font-semibold uppercase tracking-widest mb-2">For business owners</p>
+              <h2 className="text-3xl font-bold text-white mb-3">Own a Portland business?</h2>
+              <p className="text-green-100/70 max-w-md leading-relaxed">
+                Join Good PDX to connect with the community, reach local customers, and be part of something bigger than the bottom line.
+              </p>
+            </div>
+            <div className="mt-8 md:mt-0 shrink-0">
+              <Link
+                href="/sign-up"
+                className="inline-block bg-white text-[#1d4a2f] px-8 py-3.5 rounded-xl font-bold hover:bg-green-50 transition-colors text-sm"
+              >
+                Join the community
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 }
