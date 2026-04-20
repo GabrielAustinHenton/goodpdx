@@ -1,25 +1,30 @@
 import Link from 'next/link'
 import SearchBar from './components/SearchBar'
+import {
+  UtensilsCrossed, Coffee, TreePine, Footprints, Palette, Music2,
+  Clapperboard, BookOpen, Waves, PersonStanding, Hammer, Heart,
+  HardHat, ArrowLeftRight, PlaneTakeoff, TrainFront, Building2, LayoutList,
+} from 'lucide-react'
 
 const categories = [
-  { label: 'Food & Drink', href: '/goodfood', emoji: '🍽️' },
-  { label: 'Coffee', href: '/coffee', emoji: '☕' },
-  { label: 'Parks', href: '/parks', emoji: '🌲' },
-  { label: 'Hikes', href: '/hikes', emoji: '🥾' },
-  { label: 'Arts', href: '/art', emoji: '🎨' },
-  { label: 'Music', href: '/music', emoji: '🎵' },
-  { label: 'Film & Stage', href: '/filmandstage', emoji: '🎭' },
-  { label: 'History', href: '/history', emoji: '📜' },
-  { label: 'Hot Springs', href: '/hotsprings', emoji: '♨️' },
-  { label: 'Swimming', href: '/swim', emoji: '🏊' },
-  { label: 'Made Here', href: '/manufacturing', emoji: '🏭' },
-  { label: 'Wellness', href: '/healthbeauty', emoji: '💆' },
-  { label: 'Infrastructure', href: '/infrastructure', emoji: '🏗️' },
-  { label: 'Bridges', href: '/bridges', emoji: '🌉' },
-  { label: 'Airport', href: '/airport', emoji: '✈️' },
-  { label: 'Transit', href: '/transportation', emoji: '🚊' },
-  { label: 'Development', href: '/development', emoji: '🏘️' },
-  { label: 'Directory', href: '/directory', emoji: '📋' },
+  { label: 'Food & Drink', href: '/goodfood', Icon: UtensilsCrossed },
+  { label: 'Coffee', href: '/coffee', Icon: Coffee },
+  { label: 'Parks', href: '/parks', Icon: TreePine },
+  { label: 'Hikes', href: '/hikes', Icon: Footprints },
+  { label: 'Arts', href: '/art', Icon: Palette },
+  { label: 'Music', href: '/music', Icon: Music2 },
+  { label: 'Film & Stage', href: '/filmandstage', Icon: Clapperboard },
+  { label: 'History', href: '/history', Icon: BookOpen },
+  { label: 'Hot Springs', href: '/hotsprings', Icon: Waves },
+  { label: 'Swimming', href: '/swim', Icon: PersonStanding },
+  { label: 'Made Here', href: '/manufacturing', Icon: Hammer },
+  { label: 'Wellness', href: '/healthbeauty', Icon: Heart },
+  { label: 'Infrastructure', href: '/infrastructure', Icon: HardHat },
+  { label: 'Bridges', href: '/bridges', Icon: ArrowLeftRight },
+  { label: 'Airport', href: '/airport', Icon: PlaneTakeoff },
+  { label: 'Transit', href: '/transportation', Icon: TrainFront },
+  { label: 'Development', href: '/development', Icon: Building2 },
+  { label: 'Directory', href: '/directory', Icon: LayoutList },
 ]
 
 const featuredStories = [
@@ -119,14 +124,16 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-          {categories.map((cat) => (
+          {categories.map(({ label, href, Icon }) => (
             <Link
-              key={cat.href}
-              href={cat.href}
+              key={href}
+              href={href}
               className="group flex flex-col items-center text-center p-4 bg-white rounded-2xl border border-gray-100 hover:border-[#2d6a4f]/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             >
-              <span className="text-2xl mb-2">{cat.emoji}</span>
-              <span className="text-xs font-semibold text-gray-700 group-hover:text-[#1d4a2f] leading-tight">{cat.label}</span>
+              <div className="w-10 h-10 rounded-xl bg-[#e8ede6] flex items-center justify-center mb-2.5 group-hover:bg-[#1d4a2f] transition-colors">
+                <Icon className="w-5 h-5 text-[#1d4a2f] group-hover:text-white transition-colors" strokeWidth={1.5} />
+              </div>
+              <span className="text-xs font-semibold text-gray-700 group-hover:text-[#1d4a2f] leading-tight">{label}</span>
             </Link>
           ))}
         </div>
