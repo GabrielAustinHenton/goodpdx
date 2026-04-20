@@ -50,10 +50,10 @@ export default function Header() {
             </>
           ) : (
             <>
-              <Link href="/sign-in" className="text-sm text-gray-600 hover:text-[#1d4a2f] font-medium px-3 py-1.5 transition-colors">
+              <Link href="/sign-in" className="px-3 py-1.5 text-gray-600 hover:text-[#1d4a2f] font-medium transition-colors">
                 Sign in
               </Link>
-              <Link href="/sign-up" className="text-sm bg-[#1d4a2f] text-white px-4 py-2 rounded-xl hover:bg-[#2d6a4f] transition-colors font-semibold">
+              <Link href="/sign-up" className="bg-[#1d4a2f] text-white px-4 py-2 rounded-xl hover:bg-[#2d6a4f] transition-colors font-semibold">
                 Join
               </Link>
             </>
