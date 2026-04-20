@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Star, MapPin, Phone, Globe, ExternalLink, Clock } from 'lucide-react'
+import FavoriteButton from '../../components/FavoriteButton'
+import ConnectButton from '../../components/ConnectButton'
 
 const PRICE_LABELS: Record<string, string> = {
   PRICE_LEVEL_FREE: 'Free',
@@ -104,6 +106,11 @@ export default async function PlaceDetailPage({
                 {place.regularOpeningHours.openNow ? 'Open now' : 'Closed'}
               </span>
             )}
+          </div>
+          {/* Action buttons */}
+          <div className="flex items-center gap-3 mt-6 flex-wrap">
+            <ConnectButton placeId={placeId} placeName={place.displayName?.text ?? ''} />
+            <FavoriteButton placeId={placeId} placeName={place.displayName?.text ?? ''} />
           </div>
         </div>
       </div>

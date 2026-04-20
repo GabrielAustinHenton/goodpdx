@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { Search, Star, MapPin, Phone, Globe, ExternalLink, ChevronRight } from 'lucide-react'
+import { Search, Star, MapPin, Phone, Globe, ExternalLink, ChevronRight, Heart } from 'lucide-react'
+import { useAuth } from '../hooks/useAuth'
 
 interface Place {
   id: string
@@ -28,6 +29,7 @@ const PRICE_LABELS: Record<string, string> = {
 }
 
 export default function DirectoryClient({ initialQuery }: { initialQuery: string }) {
+  const { isLoggedIn } = useAuth()
   const router = useRouter()
   const searchParams = useSearchParams()
   const [query, setQuery] = useState(initialQuery)
@@ -177,7 +179,19 @@ export default function DirectoryClient({ initialQuery }: { initialQuery: string
                       )}
                     </div>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#1d4a2f] shrink-0 transition-colors" />
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        if (!isLoggedIn) router.push(`/sign-in?redirect=/directory/${place.id}`)
+                      }}
+                      title={isLoggedIn ? 'Save to favorites' : 'Sign in to save'}
+                      className="p-1.5 rounded-lg text-gray-300 hover:text-red-400 transition-colors"
+                    >
+                      <Heart className="w-4 h-4" />
+                    </button>
+                    <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#1d4a2f] transition-colors" />
+                  </div>
                 </div>
               </Link>
             ))}
