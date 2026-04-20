@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { useUser, UserButton } from '@clerk/nextjs'
 
 const navLinks = [
   { label: 'Food', href: '/goodfood' },
@@ -15,6 +15,7 @@ const navLinks = [
 ]
 
 export default function Header() {
+  const { isSignedIn } = useUser()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -40,20 +41,23 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <SignedOut>
-            <Link href="/sign-in" className="text-sm text-gray-600 hover:text-[#1d4a2f] font-medium px-3 py-1.5 transition-colors">
-              Sign in
-            </Link>
-            <Link href="/sign-up" className="text-sm bg-[#1d4a2f] text-white px-4 py-2 rounded-xl hover:bg-[#2d6a4f] transition-colors font-semibold">
-              Join
-            </Link>
-          </SignedOut>
-          <SignedIn>
-            <Link href="/account" className="text-sm text-gray-600 hover:text-[#1d4a2f] font-medium px-3 py-1.5 transition-colors">
-              My Account
-            </Link>
-            <UserButton afterSignOutUrl="/" />
-          </SignedIn>
+          {isSignedIn ? (
+            <>
+              <Link href="/account" className="text-sm text-gray-600 hover:text-[#1d4a2f] font-medium px-3 py-1.5 transition-colors">
+                My Account
+              </Link>
+              <UserButton />
+            </>
+          ) : (
+            <>
+              <Link href="/sign-in" className="text-sm text-gray-600 hover:text-[#1d4a2f] font-medium px-3 py-1.5 transition-colors">
+                Sign in
+              </Link>
+              <Link href="/sign-up" className="text-sm bg-[#1d4a2f] text-white px-4 py-2 rounded-xl hover:bg-[#2d6a4f] transition-colors font-semibold">
+                Join
+              </Link>
+            </>
+          )}
         </div>
 
         <button
@@ -83,19 +87,22 @@ export default function Header() {
             </Link>
           ))}
           <hr className="border-gray-100 my-1" />
-          <SignedOut>
-            <Link href="/sign-in" className="text-gray-700 font-medium py-1">Sign in</Link>
-            <Link href="/sign-up" className="bg-[#1d4a2f] text-white px-4 py-2.5 rounded-xl text-center font-semibold text-sm">
-              Join Good PDX
-            </Link>
-          </SignedOut>
-          <SignedIn>
-            <Link href="/account" className="text-gray-700 font-medium py-1">My Account</Link>
-            <div className="flex items-center gap-2 py-1">
-              <UserButton afterSignOutUrl="/" />
-              <span className="text-sm text-gray-500">Account settings</span>
-            </div>
-          </SignedIn>
+          {isSignedIn ? (
+            <>
+              <Link href="/account" className="text-gray-700 font-medium py-1">My Account</Link>
+              <div className="flex items-center gap-2 py-1">
+                <UserButton />
+                <span className="text-sm text-gray-500">Account settings</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <Link href="/sign-in" className="text-gray-700 font-medium py-1">Sign in</Link>
+              <Link href="/sign-up" className="bg-[#1d4a2f] text-white px-4 py-2.5 rounded-xl text-center font-semibold text-sm">
+                Join Good PDX
+              </Link>
+            </>
+          )}
         </div>
       )}
     </header>
