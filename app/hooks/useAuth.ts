@@ -1,10 +1,12 @@
 'use client'
 
-// Placeholder — swap this out when Clerk is wired up
-// Replace with: import { useUser } from '@clerk/nextjs'
+import { useUser } from '@clerk/nextjs'
+
 export function useAuth() {
+  const { isSignedIn, user, isLoaded } = useUser()
   return {
-    isLoggedIn: false,
-    user: null,
+    isLoggedIn: !!isSignedIn,
+    user,
+    isLoaded,
   }
 }
