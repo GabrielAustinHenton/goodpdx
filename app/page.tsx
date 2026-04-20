@@ -63,10 +63,8 @@ export default function Home() {
         <div className="absolute inset-0 opacity-5"
           style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px'}}
         />
-        {/* Gradient fade bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f7f4] to-transparent" />
 
-        <div className="relative max-w-6xl mx-auto px-5 pt-20 pb-32 text-center">
+        <div className="relative max-w-6xl mx-auto px-5 pt-20 pb-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-1.5 text-sm text-green-200 mb-8 border border-white/10">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Portland, Oregon
@@ -94,15 +92,30 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Mobile scroll indicator */}
+          <div className="md:hidden mt-10">
+            <svg className="w-8 h-8 text-green-300/50 mx-auto animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </section>
+
+      {/* Floating card — overlaps hero */}
+      <div className="relative z-10 -mt-8 mx-4 md:mx-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
 
       {/* Category Grid */}
       <section className="max-w-6xl mx-auto px-5 py-16">
         <div className="flex items-end justify-between mb-8">
-          <div>
-            <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Browse</p>
-            <h2 className="text-3xl font-bold text-gray-900">Explore Portland</h2>
+          <div className="flex items-center gap-3">
+            <div>
+              <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Browse</p>
+              <h2 className="text-3xl font-bold text-gray-900">Explore Portland</h2>
+            </div>
+            <svg className="hidden md:block w-8 h-8 text-[#2d6a4f]/40 mt-5 shrink-0 animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
@@ -164,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-6xl mx-auto px-5 pb-16">
+      <section className="max-w-6xl mx-auto px-5 pb-16 pt-4">
         <div className="relative bg-[#1d4a2f] rounded-3xl overflow-hidden">
           <div className="absolute inset-0 opacity-5"
             style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px'}}
@@ -188,6 +201,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </div> {/* end floating card */}
 
     </div>
   )

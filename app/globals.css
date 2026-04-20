@@ -25,3 +25,12 @@ body {
   background: #2d6a4f;
   color: white;
 }
+
+@keyframes big-bounce {
+  0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50% { transform: translateY(28px); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+.animate-big-bounce {
+  animation: big-bounce 1s infinite;
+}
