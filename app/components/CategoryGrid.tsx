@@ -25,7 +25,7 @@ function CoffeeCard({ label, href, Icon }: { label: string; href: string; Icon: 
     </Link>
   )
 }
-import { ChevronDown, UtensilsCrossed, Coffee, TreePine, Footprints, Palette, Music2, Clapperboard, BookOpen, Waves, PersonStanding, Hammer, Heart, HardHat, ArrowLeftRight, PlaneTakeoff, TrainFront, Building2, LayoutList } from 'lucide-react'
+import { ChevronDown, UtensilsCrossed, Map, Coffee, TreePine, Footprints, Palette, Music2, Clapperboard, BookOpen, Waves, PersonStanding, Hammer, Heart, HardHat, ArrowLeftRight, PlaneTakeoff, TrainFront, Building2, LayoutList } from 'lucide-react'
 
 const categories = [
   { label: 'Food & Drink', href: '/goodfood', Icon: UtensilsCrossed },
@@ -46,6 +46,7 @@ const categories = [
   { label: 'Transit', href: '/transportation', Icon: TrainFront },
   { label: 'Development', href: '/development', Icon: Building2 },
   { label: 'Directory', href: '/directory', Icon: LayoutList },
+  { label: 'Neighborhoods', href: '/neighborhoods', Icon: Map },
 ]
 
 export default function CategoryGrid() {

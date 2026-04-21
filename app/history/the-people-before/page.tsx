@@ -23,7 +23,7 @@ export default function ThePeopleBeforePage() {
     <div className="min-h-screen bg-[#f8f7f4]">
 
       {/* Hero */}
-      <div className="bg-[#2a1a0a] text-white py-16 px-5">
+      <div className="bg-[#2a1a0a] text-white pt-20 pb-16 px-5">
         <div className="max-w-3xl mx-auto">
           <Link href="/history" className="inline-flex items-center gap-1.5 text-amber-300/70 hover:text-amber-300 text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Portland History

@@ -16,7 +16,7 @@ const links = [
 export default function CoffeePage() {
   return (
     <div className="min-h-screen bg-[#f8f7f4]">
-      <div className="bg-[#3b2010] text-white py-16 px-5">
+      <div className="bg-[#3b2010] text-white pt-20 pb-16 px-5">
         <div className="max-w-3xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-1.5 text-amber-300/70 hover:text-amber-300 text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Home
@@ -35,7 +35,7 @@ export default function CoffeePage() {
             Portland's coffee culture runs parallel to its food culture — hyperlocal, craft-obsessed, and resistant to mediocrity. Roasters like <strong>Stumptown</strong> (founded here in 1999), <strong>Water Avenue</strong>, <strong>Coava</strong>, and <strong>Guilder</strong> built reputations that spread well beyond the Pacific Northwest. The city helped define what specialty coffee looks like in America.
           </p>
           <p>
-            The neighborhood cafe is an institution here. In Portland, a coffee shop is often where people work, meet, organize, and spend half a Saturday. Most neighborhoods have at least one worth seeking out. Many are independent, most are serious about sourcing, and a growing number are <strong>women-owned or BIPOC-led</strong> — businesses that Good PDX will feature as this directory grows.
+            The neighborhood cafe is an institution here. In Portland, a coffee shop is often where people work, meet, organize, and spend half a Sunday. Most neighborhoods have at least one worth seeking out. Many are independent, most are serious about sourcing, and a growing number are <strong>women-owned or BIPOC-led</strong> — businesses that Good PDX will feature as this directory grows.
           </p>
           <p>
             A full coffee directory — with neighborhood filters, roaster profiles, and community reviews — is coming to Good PDX. In the meantime, the links below will point you in the right direction.

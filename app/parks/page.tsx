@@ -19,7 +19,7 @@ export default function ParksPage() {
   return (
     <div className="min-h-screen bg-[#f8f7f4]">
 
-      <div className="bg-[#1d4a2f] text-white py-16 px-5">
+      <div className="bg-[#1d4a2f] text-white pt-20 pb-16 px-5">
         <div className="max-w-3xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-1.5 text-green-300/70 hover:text-green-300 text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Home

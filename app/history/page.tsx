@@ -24,7 +24,7 @@ export default function HistoryPage() {
   return (
     <div className="min-h-screen bg-[#f8f7f4]">
 
-      <div className="bg-[#2a1f14] text-white py-16 px-5">
+      <div className="bg-[#2a1f14] text-white pt-20 pb-16 px-5">
         <div className="max-w-3xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-1.5 text-amber-300/70 hover:text-amber-300 text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Home

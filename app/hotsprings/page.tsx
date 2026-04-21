@@ -15,7 +15,7 @@ const links = [
 export default function HotSpringsPage() {
   return (
     <div className="min-h-screen bg-[#f8f7f4]">
-      <div className="bg-[#1a3a4a] text-white py-16 px-5">
+      <div className="bg-[#1a3a4a] text-white pt-20 pb-16 px-5">
         <div className="max-w-3xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-1.5 text-cyan-300/70 hover:text-cyan-300 text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Home

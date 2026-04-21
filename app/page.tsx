@@ -28,7 +28,7 @@ const featuredStories = [
 
 const stats = [
   { value: '650K+', label: 'Portlanders' },
-  { value: '18', label: 'Neighborhoods' },
+  { value: '94', label: 'Neighborhoods', href: '/neighborhoods' },
   { value: '12', label: 'Bridges' },
   { value: '1851', label: 'Founded' },
 ]
@@ -67,7 +67,10 @@ export default function Home() {
           <div className="mt-8 grid grid-cols-4 gap-4 max-w-lg mx-auto">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <div className="text-2xl font-bold text-white">{s.value}</div>
+                {'href' in s
+                  ? <a href={s.href} className="text-2xl font-bold text-white hover:text-green-300 transition-colors">{s.value}</a>
+                  : <div className="text-2xl font-bold text-white">{s.value}</div>
+                }
                 <div className="text-xs text-green-300/70 mt-0.5">{s.label}</div>
               </div>
             ))}
@@ -92,7 +95,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-8">
           <div className="flex items-center gap-3">
             <div>
-              <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Browse</p>
+              <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">&nbsp;</p>
               <h2 className="text-3xl font-bold text-gray-900">Explore Portland</h2>
             </div>
             <a href="#explore" aria-label="Scroll to explore">
