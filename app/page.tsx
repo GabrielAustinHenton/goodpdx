@@ -88,7 +88,7 @@ export default function Home() {
       <div className="relative z-10 -mt-8 mx-4 md:mx-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
 
       {/* Category Grid */}
-      <section id="explore" className="max-w-6xl mx-auto px-5 pt-8 pb-3">
+      <section id="explore" style={{ scrollMarginTop: '7rem' }} className="max-w-6xl mx-auto px-5 pt-3 pb-3">
         <div className="flex items-end justify-between mb-8">
           <div className="flex items-center gap-3">
             <div>
@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* Featured Stories */}
-      <section id="community" className="max-w-6xl mx-auto px-5 pt-3 pb-16">
+      <section id="community" style={{ scrollMarginTop: '7rem' }} className="max-w-6xl mx-auto px-5 pt-8 pb-16">
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Stories</p>

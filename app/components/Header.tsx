@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { useUser, UserButton } from '@clerk/nextjs'
 
 const navLinks = [
@@ -17,11 +18,16 @@ const navLinks = [
 export default function Header() {
   const { isSignedIn } = useUser()
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link
+          href="/"
+          onClick={(e) => { if (pathname === '/') { e.preventDefault(); window.location.href = '/' } }}
+          className="flex items-center gap-2.5"
+        >
           <div className="w-7 h-7 bg-[#1d4a2f] rounded-lg flex items-center justify-center">
             <span className="text-white text-xs font-bold">G</span>
           </div>
