@@ -1,31 +1,6 @@
 import Link from 'next/link'
 import SearchBar from './components/SearchBar'
-import {
-  UtensilsCrossed, Coffee, TreePine, Footprints, Palette, Music2,
-  Clapperboard, BookOpen, Waves, PersonStanding, Hammer, Heart,
-  HardHat, ArrowLeftRight, PlaneTakeoff, TrainFront, Building2, LayoutList,
-} from 'lucide-react'
-
-const categories = [
-  { label: 'Food & Drink', href: '/goodfood', Icon: UtensilsCrossed },
-  { label: 'Coffee', href: '/coffee', Icon: Coffee },
-  { label: 'Parks', href: '/parks', Icon: TreePine },
-  { label: 'Hikes', href: '/hikes', Icon: Footprints },
-  { label: 'Arts', href: '/art', Icon: Palette },
-  { label: 'Music', href: '/music', Icon: Music2 },
-  { label: 'Film & Stage', href: '/filmandstage', Icon: Clapperboard },
-  { label: 'History', href: '/history', Icon: BookOpen },
-  { label: 'Hot Springs', href: '/hotsprings', Icon: Waves },
-  { label: 'Swimming', href: '/swim', Icon: PersonStanding },
-  { label: 'Made Here', href: '/manufacturing', Icon: Hammer },
-  { label: 'Wellness', href: '/healthbeauty', Icon: Heart },
-  { label: 'Infrastructure', href: '/infrastructure', Icon: HardHat },
-  { label: 'Bridges', href: '/bridges', Icon: ArrowLeftRight },
-  { label: 'Airport', href: '/airport', Icon: PlaneTakeoff },
-  { label: 'Transit', href: '/transportation', Icon: TrainFront },
-  { label: 'Development', href: '/development', Icon: Building2 },
-  { label: 'Directory', href: '/directory', Icon: LayoutList },
-]
+import CategoryGrid from './components/CategoryGrid'
 
 const featuredStories = [
   {
@@ -46,7 +21,7 @@ const featuredStories = [
     tag: 'History',
     title: 'Vanport: The City We Forgot',
     excerpt: 'The 1948 flood erased Oregon\'s second-largest city overnight. Understanding Vanport means understanding Portland.',
-    href: '/history',
+    href: '/history/vanport',
     accent: '#5a4a3a',
   },
 ]
@@ -69,7 +44,7 @@ export default function Home() {
           style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px'}}
         />
 
-        <div className="relative max-w-6xl mx-auto px-5 pt-20 pb-20 text-center">
+        <div className="relative max-w-6xl mx-auto px-5 pt-10 pb-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-1.5 text-sm text-green-200 mb-8 border border-white/10">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Portland, Oregon
@@ -82,14 +57,14 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="text-green-100/80 text-lg md:text-xl mb-12 max-w-lg mx-auto leading-relaxed">
+          <p className="text-green-100/80 text-lg md:text-xl mb-6 max-w-lg mx-auto leading-relaxed">
             Discover local businesses, history, parks, arts, and everything that makes Portland worth loving.
           </p>
 
           <SearchBar />
 
           {/* Stats */}
-          <div className="mt-16 grid grid-cols-4 gap-4 max-w-lg mx-auto">
+          <div className="mt-8 grid grid-cols-4 gap-4 max-w-lg mx-auto">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-2xl font-bold text-white">{s.value}</div>
@@ -100,9 +75,11 @@ export default function Home() {
 
           {/* Mobile scroll indicator */}
           <div className="md:hidden mt-10">
-            <svg className="w-8 h-8 text-green-300/50 mx-auto animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-            </svg>
+            <a href="#explore" aria-label="Scroll to explore">
+              <svg className="w-8 h-8 text-green-300/50 mx-auto animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -111,45 +88,36 @@ export default function Home() {
       <div className="relative z-10 -mt-8 mx-4 md:mx-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
 
       {/* Category Grid */}
-      <section className="max-w-6xl mx-auto px-5 py-16">
+      <section id="explore" className="max-w-6xl mx-auto px-5 pt-8 pb-3">
         <div className="flex items-end justify-between mb-8">
           <div className="flex items-center gap-3">
             <div>
               <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Browse</p>
               <h2 className="text-3xl font-bold text-gray-900">Explore Portland</h2>
             </div>
-            <svg className="hidden md:block w-8 h-8 text-[#2d6a4f]/40 mt-5 shrink-0 animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-            </svg>
+            <a href="#explore" aria-label="Scroll to explore">
+              <svg className="hidden md:block w-8 h-8 text-[#2d6a4f]/40 mt-5 shrink-0 animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
           </div>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-          {categories.map(({ label, href, Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              className="group flex flex-col items-center text-center p-4 bg-white rounded-2xl border border-gray-100 hover:border-[#2d6a4f]/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#e8ede6] flex items-center justify-center mb-2.5 group-hover:bg-[#1d4a2f] transition-colors">
-                <Icon className="w-5 h-5 text-[#1d4a2f] group-hover:text-white transition-colors" strokeWidth={1.5} />
-              </div>
-              <span className="text-xs font-semibold text-gray-700 group-hover:text-[#1d4a2f] leading-tight">{label}</span>
-            </Link>
-          ))}
-        </div>
+        <CategoryGrid />
       </section>
 
-      {/* Divider */}
-      <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-      </div>
-
       {/* Featured Stories */}
-      <section className="max-w-6xl mx-auto px-5 py-16">
+      <section id="community" className="max-w-6xl mx-auto px-5 pt-3 pb-16">
         <div className="flex items-end justify-between mb-8">
           <div>
             <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">Stories</p>
-            <h2 className="text-3xl font-bold text-gray-900">From the Community</h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-3xl font-bold text-gray-900">From the Community</h2>
+              <a href="#community" aria-label="Scroll to stories">
+                <svg className="hidden md:block w-8 h-8 text-[#2d6a4f] mt-1 shrink-0 animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+            </div>
           </div>
           <Link href="/blog" className="text-sm text-[#1d4a2f] hover:text-[#2d6a4f] font-semibold flex items-center gap-1">
             All stories <span>→</span>
@@ -179,6 +147,74 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Around Portland */}
+      <section className="max-w-6xl mx-auto px-5 py-12">
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">The Web</p>
+            <h2 className="text-3xl font-bold text-gray-900">Around Portland</h2>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-4 gap-6">
+          {[
+            {
+              category: 'Food & Drink',
+              links: [
+                { label: 'Eater Portland', href: 'https://pdx.eater.com/' },
+                { label: 'Portland Monthly — Eat & Drink', href: 'https://www.pdxmonthly.com/eat-and-drink' },
+                { label: 'Willamette Week — Food', href: 'https://www.wweek.com/food/' },
+              ],
+            },
+            {
+              category: 'Travel & Tourism',
+              links: [
+                { label: 'Travel Portland', href: 'https://www.travelportland.com/' },
+                { label: 'Travel Oregon — Portland', href: 'https://traveloregon.com/places-to-go/cities/portland/' },
+                { label: 'Portland.gov — Visiting', href: 'https://www.portland.gov/visiting' },
+              ],
+            },
+            {
+              category: 'News & Culture',
+              links: [
+                { label: 'Willamette Week', href: 'https://www.wweek.com/' },
+                { label: 'Portland Mercury', href: 'https://www.portlandmercury.com/' },
+                { label: 'Portland Monthly', href: 'https://www.pdxmonthly.com/' },
+                { label: 'The Skanner', href: 'https://www.theskanner.com/' },
+              ],
+            },
+            {
+              category: 'Neighborhoods',
+              links: [
+                { label: 'Portland Neighborhood Guide', href: 'https://portlandneighborhood.com/' },
+                { label: 'Travel Portland — Neighborhoods', href: 'https://www.travelportland.com/neighborhoods/' },
+                { label: 'City Cast Portland', href: 'https://portland.citycast.fm/' },
+              ],
+            },
+          ].map((col) => (
+            <div key={col.category}>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">{col.category}</p>
+              <ul className="space-y-2">
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-[#1d4a2f] hover:underline flex items-center gap-1.5 group"
+                    >
+                      {link.label}
+                      <svg className="w-3 h-3 text-gray-300 group-hover:text-[#1d4a2f] transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </section>
