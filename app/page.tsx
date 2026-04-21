@@ -7,7 +7,7 @@ const featuredStories = [
     tag: 'Community',
     title: 'Why Good PDX is a Benefit Company',
     excerpt: 'Our LLC is structured to serve the community, not just shareholders — here\'s what that means in practice.',
-    href: '/blog',
+    href: '/blog/benefit-company',
     accent: '#1d4a2f',
   },
   {

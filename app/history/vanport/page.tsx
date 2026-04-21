@@ -13,6 +13,7 @@ const sources = [
   { label: 'NPR Code Switch — The Time Nature and Racism Teamed Up to Wipe Out a Whole Town', href: 'https://www.npr.org/sections/codeswitch/2015/03/02/389482158/the-time-nature-and-racism-teamed-up-to-wipe-out-a-whole-town' },
   { label: 'Oregon History Project — The Vanport Flood', href: 'https://www.oregonhistoryproject.org/articles/essays/the-vanport-flood/' },
   { label: 'Wikipedia — Vanport, Oregon', href: 'https://en.wikipedia.org/wiki/Vanport,_Oregon' },
+  { label: 'Oregon Historical Society — Vanport Exhibit', href: 'https://www.ohs.org/museum/exhibits/vanport.cfm' },
 ]
 
 export default function VanportPage() {
@@ -25,7 +26,7 @@ export default function VanportPage() {
           <Link href="/history" className="inline-flex items-center gap-1.5 text-amber-300/70 hover:text-amber-300 text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Portland History
           </Link>
-          <div className="inline-block text-xs font-bold uppercase tracking-widest text-amber-400 mb-4 block">History</div>
+          <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-4">History</div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
             Vanport: The City Portland Forgot
           </h1>

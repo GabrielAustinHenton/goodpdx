@@ -25,7 +25,7 @@ function CoffeeCard({ label, href, Icon }: { label: string; href: string; Icon: 
     </Link>
   )
 }
-import { ChevronDown, ChevronUp, UtensilsCrossed, Coffee, TreePine, Footprints, Palette, Music2, Clapperboard, BookOpen, Waves, PersonStanding, Hammer, Heart, HardHat, ArrowLeftRight, PlaneTakeoff, TrainFront, Building2, LayoutList } from 'lucide-react'
+import { ChevronDown, UtensilsCrossed, Coffee, TreePine, Footprints, Palette, Music2, Clapperboard, BookOpen, Waves, PersonStanding, Hammer, Heart, HardHat, ArrowLeftRight, PlaneTakeoff, TrainFront, Building2, LayoutList } from 'lucide-react'
 
 const categories = [
   { label: 'Food & Drink', href: '/goodfood', Icon: UtensilsCrossed },
@@ -84,17 +84,6 @@ export default function CategoryGrid() {
           </button>
         )}
 
-        {expanded && (
-          <div className="col-span-3 sm:col-span-4 md:col-span-6 flex justify-center mt-1">
-            <button
-              onClick={() => setExpanded(false)}
-              className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-transparent hover:bg-[#fdf3e7] transition-all duration-200"
-            >
-              <ChevronUp className="w-3.5 h-3.5 text-[#d47c2f]" strokeWidth={2} />
-              <span className="text-xs font-semibold text-[#d47c2f]">Less</span>
-            </button>
-          </div>
-        )}
       </div>
     </div>
   )
