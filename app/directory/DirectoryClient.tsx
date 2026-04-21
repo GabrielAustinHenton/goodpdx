@@ -104,10 +104,10 @@ export default function DirectoryClient({ initialQuery }: { initialQuery: string
           </p>
           <div className="grid gap-4">
             {places.map((place) => (
-              <Link
+              <div
                 key={place.id}
-                href={`/directory/${place.id}?back=${encodeURIComponent(query)}`}
-                className="block bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-[#2d6a4f]/20 transition-all group"
+                onClick={() => router.push(`/directory/${place.id}?back=${encodeURIComponent(query)}`)}
+                className="block bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-[#2d6a4f]/20 transition-all group cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
@@ -193,7 +193,7 @@ export default function DirectoryClient({ initialQuery }: { initialQuery: string
                     <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#1d4a2f] transition-colors" />
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </>
