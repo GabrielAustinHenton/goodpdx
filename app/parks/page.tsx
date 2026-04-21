@@ -38,7 +38,7 @@ export default function ParksPage() {
         <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Forest Park: A Forest, Not a Park</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Forest Park</h2>
             <p>
               <a href="https://www.portland.gov/parks/forest-park" target="_blank" rel="noopener noreferrer" className="text-[#1d4a2f] hover:underline">Forest Park</a> covers more than 5,200 acres along the eastern slope of the Tualatin Mountains — making it one of the largest urban forests in the United States. It's roughly a mile wide and eight miles long, stretching along the northwest edge of the city with views over the Willamette and Columbia rivers.
             </p>

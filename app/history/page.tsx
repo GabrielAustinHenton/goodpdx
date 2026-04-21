@@ -7,7 +7,9 @@ export const metadata = {
 }
 
 const articles = [
+  { title: 'The People Before Portland', href: '/history/the-people-before', excerpt: 'For 11,000 years before a coin toss named this city, the Chinookan peoples lived, traded, and thrived on this same ground. Here is their story.' },
   { title: 'Vanport: The City Portland Forgot', href: '/history/vanport', excerpt: 'The 1948 flood erased Oregon\'s second-largest city in under ten minutes. 18,500 people homeless by sunset.' },
+  { title: 'Crimps and the Shanghai Trade', href: '/history/crimps-and-shanghai', excerpt: 'In the 1880s and 1890s Portland was the shanghaing capital of the world. Men were drugged, kidnapped, and sold to ship captains. This is how it worked.' },
 ]
 
 const links = [
@@ -79,7 +81,6 @@ export default function HistoryPage() {
                 </Link>
               ))}
             </div>
-            <p className="text-sm text-gray-400 mt-6">More articles coming soon.</p>
           </div>
         )}
 
