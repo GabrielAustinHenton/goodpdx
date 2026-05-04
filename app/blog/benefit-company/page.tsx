@@ -84,7 +84,7 @@ export default function BenefitCompanyPage() {
             </p>
           </section>
 
-        </div>
+        </EditableContent>
 
         <div className="mt-14 pt-10 border-t border-gray-200">
           <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4a2f] hover:text-[#2d6a4f]">

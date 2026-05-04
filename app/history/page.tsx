@@ -60,7 +60,7 @@ export default function HistoryPage() {
             <p>
               The 20th century brought shipyards, wartime housing, catastrophic flood, and decades of decisions about who got to stay in which neighborhoods. That history is Portland's history — and it's still being reckoned with.
             </p>
-          </div>
+          </EditableContent>
         </div>
 
         {articles.length > 0 && (
@@ -97,7 +97,7 @@ export default function HistoryPage() {
               </li>
             ))}
           </ul>
-        </EditableContent>
+        </div>
 
         <div className="mt-10 pt-10 border-t border-gray-200">
           <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4a2f] hover:text-[#2d6a4f]">

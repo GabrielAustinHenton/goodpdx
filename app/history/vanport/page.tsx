@@ -120,7 +120,7 @@ export default function VanportPage() {
             </p>
           </section>
 
-        </div>
+        </EditableContent>
 
         {/* Sources */}
         <div className="mt-14 border-t border-gray-200 pt-10">

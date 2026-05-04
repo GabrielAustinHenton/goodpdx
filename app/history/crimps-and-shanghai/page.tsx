@@ -116,7 +116,7 @@ export default function CrimpsAndShanghaiPage() {
             </p>
           </section>
 
-        </div>
+        </EditableContent>
 
         {/* Sources */}
         <div className="mt-14 border-t border-gray-200 pt-10">
@@ -131,7 +131,7 @@ export default function CrimpsAndShanghaiPage() {
               </li>
             ))}
           </ul>
-        </EditableContent>
+        </div>
 
         <div className="mt-10 pt-10 border-t border-gray-200">
           <Link href="/history" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4a2f] hover:text-[#2d6a4f]">
