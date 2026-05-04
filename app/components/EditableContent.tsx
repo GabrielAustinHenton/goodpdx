@@ -33,6 +33,7 @@ export default function EditableContent({ pageSlug, sectionKey = 'main', classNa
   }, [pageSlug, sectionKey])
 
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit,
       TiptapLink.configure({ openOnClick: false }),
