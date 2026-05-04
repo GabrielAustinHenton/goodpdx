@@ -27,10 +27,10 @@ const featuredStories = [
 ]
 
 const stats = [
-  { value: '650K+', label: 'Portlanders' },
+  { value: '650K+', label: 'Portlanders', href: '/portlanders' },
   { value: '94', label: 'Neighborhoods', href: '/neighborhoods' },
-  { value: '12', label: 'Bridges' },
-  { value: '1851', label: 'Founded' },
+  { value: '12', label: 'Bridges', href: '/bridges' },
+  { value: '1851', label: 'Founded', href: '/history' },
 ]
 
 export default function Home() {
@@ -67,11 +67,10 @@ export default function Home() {
           <div className="mt-8 grid grid-cols-4 gap-4 max-w-lg mx-auto">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                {'href' in s
-                  ? <a href={s.href} className="text-2xl font-bold text-white hover:text-green-300 transition-colors">{s.value}</a>
-                  : <div className="text-2xl font-bold text-white">{s.value}</div>
-                }
-                <div className="text-xs text-green-300/70 mt-0.5">{s.label}</div>
+                <a href={s.href} className="group inline-block">
+                  <div className="text-2xl font-bold text-white group-hover:text-green-300 transition-colors">{s.value}</div>
+                  <div className="text-xs text-green-300/70 group-hover:text-white mt-0.5 transition-colors">{s.label}</div>
+                </a>
               </div>
             ))}
           </div>
@@ -116,7 +115,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <h2 className="text-3xl font-bold text-gray-900">From the Community</h2>
               <a href="#community" aria-label="Scroll to stories">
-                <svg className="hidden md:block w-8 h-8 text-[#2d6a4f] mt-1 shrink-0 animate-big-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="hidden md:block w-8 h-8 text-[#2d6a4f] mt-1 shrink-0 animate-big-bounce-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </a>

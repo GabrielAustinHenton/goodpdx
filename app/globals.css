@@ -38,3 +38,7 @@ body {
 .animate-big-bounce {
   animation: big-bounce 1s infinite;
 }
+
+.animate-big-bounce-slow {
+  animation: big-bounce 8s infinite;
+}
