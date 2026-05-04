@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'Montavilla — Good PDX Neighborhoods', description: 'Named for a place that never existed. One of Portland\'s most interesting emerging neighborhoods, anchored by 82nd Avenue and Lone Fir Cemetery.' }
 const accent = '#3a2a0a'
 export default function MontavillaPage() {
@@ -15,6 +16,8 @@ export default function MontavillaPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/montavilla">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -41,6 +44,8 @@ export default function MontavillaPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>The Academy Theater on SE Stark, a 1948 movie house now operated by McMenamins, shows second-run films for $4. It has the same beer-and-pizza model as the Bagdad. Both are worth your time.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.travelportland.com/neighborhoods/montavilla/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Travel Portland — Montavilla</a>
         </div>

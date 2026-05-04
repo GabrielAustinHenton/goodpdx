@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Coffee — Good PDX',
@@ -30,7 +31,7 @@ export default function CoffeePage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="coffee" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             Portland's coffee culture runs parallel to its food culture — hyperlocal, craft-obsessed, and resistant to mediocrity. Roasters like <strong>Stumptown</strong> (founded here in 1999), <strong>Water Avenue</strong>, <strong>Coava</strong>, and <strong>Guilder</strong> built reputations that spread well beyond the Pacific Northwest. The city helped define what specialty coffee looks like in America.
           </p>
@@ -40,7 +41,7 @@ export default function CoffeePage() {
           <p>
             A full coffee directory — with neighborhood filters, roaster profiles, and community reviews — is coming to Good PDX. In the meantime, the links below will point you in the right direction.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Where to Read More</h3>

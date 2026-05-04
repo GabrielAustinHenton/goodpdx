@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Portland History — Good PDX',
@@ -46,7 +47,7 @@ export default function HistoryPage() {
             <p className="text-xs font-semibold text-[#2d6a4f] uppercase tracking-widest mb-1">The Basics</p>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">A City Decided by Chance</h2>
           </div>
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+          <EditableContent pageSlug="history" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
             <p>
               In 1843, William Overton and Asa Lovejoy staked a land claim on the west bank of the Willamette. Two years later, Lovejoy and a new partner — Francis Pettygrove of Portland, Maine — flipped a coin to name the settlement. Pettygrove won. Portland, Oregon was incorporated on <a href="https://www.opb.org/article/2022/02/08/portland-oregon-history-on-its-incorporation-anniversary/" target="_blank" rel="noopener noreferrer" className="text-[#2a1f14] hover:underline">February 8, 1851</a>.
             </p>
@@ -96,7 +97,7 @@ export default function HistoryPage() {
               </li>
             ))}
           </ul>
-        </div>
+        </EditableContent>
 
         <div className="mt-10 pt-10 border-t border-gray-200">
           <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4a2f] hover:text-[#2d6a4f]">

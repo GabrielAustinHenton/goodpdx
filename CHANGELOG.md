@@ -9,6 +9,16 @@ A running record of features, content, and fixes shipped to goodpdx.com.
 ### Added
 - 10 new neighborhood pages: Buckman, Sunnyside, Foster-Powell, Hollywood, Grant Park, Beaumont-Wilshire, Multnomah Village, University Park, Portsmouth, Cully
 - Hub page (`/neighborhoods`) updated to 28 neighborhood cards
+- **CMS** — WordPress-style inline editing for all content pages, visible only to `gabriel@goodpdx.com`
+  - `EditableContent` client component with Tiptap rich text editor (bold, italic, headings, lists, links)
+  - Floating "✏️ Edit Page" button on every content page when admin is signed in
+  - Saves instantly to Supabase (`page_content` table); published content replaces static JSX on next visit
+  - API route `GET/POST /api/content` with Clerk server-side admin verification
+  - All 50+ pages updated to wrap prose sections in `EditableContent`
+- `/portlanders` page — types of Portlanders and what they value
+- `/bridges` page rebuilt — all 12 Willamette bridges with full history, listed north to south
+- Homepage stats: all 4 now link to their respective pages (650K+ → `/portlanders`, 94 → `/neighborhoods`, 12 → `/bridges`, 1851 → `/history`); hover turns number green and label white
+- Footer: Good PDX logo/tagline block has white border; link columns reordered (columns left + Good PDX box right on desktop, columns top + Good PDX box bottom on mobile); column spacing increased
 
 ---
 

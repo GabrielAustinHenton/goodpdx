@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Infrastructure — Good PDX',
@@ -30,7 +31,7 @@ export default function InfrastructurePage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="infrastructure" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             Portland's drinking water comes from the Bull Run Watershed on the slopes of Mount Hood — one of the few major American cities still drawing from a largely unfiltered surface source. The water is cold, clean, and gravity-fed for much of its journey to your tap. The <a href="https://www.portland.gov/water" target="_blank" rel="noopener noreferrer" className="text-[#1a1a1a] hover:underline">Portland Water Bureau</a> manages one of the most envied municipal water systems in the country.
           </p>
@@ -43,7 +44,7 @@ export default function InfrastructurePage() {
           <p>
             Good PDX will cover infrastructure as civic journalism — tracking major projects, understanding what's working, and explaining what decisions shape the city's built environment over the next century.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

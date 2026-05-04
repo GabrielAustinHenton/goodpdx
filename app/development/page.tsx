@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Development — Good PDX',
@@ -31,7 +32,7 @@ export default function DevelopmentPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="development" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             Portland has spent much of the last decade navigating competing pressures: a housing shortage that has made the city significantly less affordable, a commercial real estate market reshaped by remote work, and neighborhoods in flux as investment flows in and longtime residents flow out.
           </p>
@@ -44,7 +45,7 @@ export default function DevelopmentPage() {
           <p>
             Good PDX will track major development projects, housing policy, and neighborhood-level changes — with a focus on what's actually happening on the ground, not just in press releases.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

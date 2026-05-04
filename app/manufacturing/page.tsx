@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Made Here — Good PDX',
@@ -30,7 +31,7 @@ export default function ManufacturingPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="manufacturing" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             Nike was founded in Eugene and built its empire from Beaverton. Columbia Sportswear has been headquartered in Portland since 1938. Adidas North America runs out of Portland. But Portland's manufacturing identity isn't just about the giants — it's about the makers operating at a human scale.
           </p>
@@ -43,7 +44,7 @@ export default function ManufacturingPage() {
           <p>
             Good PDX's <strong>Made Here</strong> section will profile Portland manufacturers, makers, and the people behind the products — with particular attention to women-owned, BIPOC-led, and disability-owned businesses that don't always get the spotlight.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Transit — Good PDX',
@@ -30,7 +31,7 @@ export default function TransportationPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="transportation" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             <a href="https://trimet.org/" target="_blank" rel="noopener noreferrer" className="text-[#1a2a1a] hover:underline">TriMet</a> operates Portland's bus and MAX light rail system. The MAX has five lines — Blue, Red, Orange, Yellow, and Green — connecting the airport, Beaverton, Gresham, Clackamas, and Expo Center. A single fare ($2.50) covers buses and MAX with a 2.5-hour transfer window.
           </p>
@@ -43,7 +44,7 @@ export default function TransportationPage() {
           <p>
             Good PDX will feature transit guides, neighborhood walkability info, and resources for getting around Portland without a car.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

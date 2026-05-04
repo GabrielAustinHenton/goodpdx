@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'St. Johns — Good PDX Neighborhoods', description: 'A Gothic suspension bridge, Cathedral Park, and a neighborhood that was its own city for 26 years before Portland absorbed it.' }
 const accent = '#1a3a2f'
 export default function StJohnsPage() {
@@ -15,6 +16,8 @@ export default function StJohnsPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/st-johns">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -42,6 +45,8 @@ export default function StJohnsPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>The St. Johns Bridge was built during the Depression for $4.5 million — roughly $80 million in today's money. It took two years to build and has required minimal structural work in the nine decades since.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.travelportland.com/neighborhoods/st-johns/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Travel Portland — St. Johns</a>
           <a href="https://www.portland.gov/parks/cathedral-park" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Cathedral Park — Portland Parks</a>

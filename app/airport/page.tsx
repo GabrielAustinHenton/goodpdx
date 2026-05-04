@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'PDX Airport — Good PDX',
@@ -29,7 +30,7 @@ export default function AirportPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="airport" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             <a href="https://www.pdx.com/" target="_blank" rel="noopener noreferrer" className="text-[#0a1a2a] hover:underline">Portland International Airport</a> has been ranked the best airport in North America by Condé Nast Traveler readers multiple times. It handles around 20 million passengers annually, serves over 100 destinations, and manages to feel human-scaled in a way that most airports twice its size don't.
           </p>
@@ -42,7 +43,7 @@ export default function AirportPage() {
           <p>
             The airport's food and retail vendors are predominantly local — Powell's Books, Voodoo Doughnut, Elephants Delicatessen, and Laurelwood Brewing all operate concessions inside the terminal. It's one of the few airports in the country where eating before you get to the gate is optional.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

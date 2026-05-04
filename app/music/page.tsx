@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Music — Good PDX',
@@ -31,7 +32,7 @@ export default function MusicPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="music" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             Portland has produced an outsized number of influential artists — The Decemberists, Sleater-Kinney, Elliott Smith, Esperanza Spalding, Everclear, and Quarterflash all have deep Portland roots. The city's music infrastructure — recording studios, rehearsal spaces, independent labels, a dense network of small venues — keeps new artists coming up faster than most cities ten times its size.
           </p>
@@ -47,7 +48,7 @@ export default function MusicPage() {
           <p>
             Good PDX will build out a live music calendar, venue guide, and artist spotlight section — with attention to local and emerging artists who don't have publicists.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

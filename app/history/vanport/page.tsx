@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 
 export const metadata = {
   title: 'Vanport: The City Portland Forgot — Good PDX',
@@ -39,7 +40,7 @@ export default function VanportPage() {
 
       {/* Article */}
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
+        <EditableContent pageSlug="history/vanport" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">A City Built Overnight</h2>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 
 export const metadata = {
   title: 'Why Good PDX is a Benefit Company — Good PDX',
@@ -28,7 +29,7 @@ export default function BenefitCompanyPage() {
 
       {/* Article */}
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
+        <EditableContent pageSlug="blog/benefit-company" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">It Started as a Passion Project</h2>

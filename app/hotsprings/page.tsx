@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Hot Springs — Good PDX',
@@ -29,7 +30,7 @@ export default function HotSpringsPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="hotsprings" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             <strong>Bagby Hot Springs</strong> — about 70 miles southeast of Portland in the Mount Hood National Forest — is the most popular hot springs destination in Oregon. A 1.5-mile trail through old-growth forest leads to a series of log tubs fed by a natural spring at around 136°F. Permits are now required seasonally due to high demand.
           </p>
@@ -42,7 +43,7 @@ export default function HotSpringsPage() {
           <p>
             Good PDX will feature a full guide with access notes, permit requirements, seasonal conditions, and Leave No Trace guidance.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

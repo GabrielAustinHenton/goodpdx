@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Bridges — Good PDX',
@@ -141,14 +142,14 @@ export default function BridgesPage() {
 
       <div className="max-w-3xl mx-auto px-5 py-14">
 
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-14">
+        <EditableContent pageSlug="bridges" className="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-14">
           <p>
             The first bridge across the Willamette in Portland opened in 1887 — a wooden toll structure at the Morrison Street crossing. Before it, the only way across was by ferry. Today twelve bridges span the river within city limits, ranging from century-old steel drawbridges to a 21st-century cable-stay that carries trains but no cars. No American city has more Willamette crossings, and few have bridges as architecturally or historically varied.
           </p>
           <p className="mt-4">
             They are listed here from north to south.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="space-y-10">
           {bridges.map((bridge, i) => (

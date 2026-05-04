@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'Concordia — Good PDX Neighborhoods', description: 'A quiet NE Portland neighborhood with deep roots, community gardens, and a stretch of Alberta that still belongs to the people who live there.' }
 const accent = '#1a3a1a'
 export default function ConcordiaPage() {
@@ -15,6 +16,8 @@ export default function ConcordiaPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/concordia">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -41,6 +44,8 @@ export default function ConcordiaPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>Concordia was recognized by the American Forests organization for having one of the best urban tree canopies in Portland — a distinction the neighborhood takes seriously, given that mature street trees take 40–60 years to reach the canopy size that makes a neighborhood feel like a neighborhood.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.travelportland.com/neighborhoods/concordia/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Travel Portland — Concordia</a>
         </div>

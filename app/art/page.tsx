@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Arts — Good PDX',
@@ -32,7 +33,7 @@ export default function ArtPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="art" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             The <a href="https://portlandartmuseum.org/" target="_blank" rel="noopener noreferrer" className="text-[#2d1a4a] hover:underline">Portland Art Museum</a> — founded in 1892, making it one of the oldest on the West Coast — holds a collection of over 42,000 works including significant holdings in Native American and Pacific Northwest art, European masters, and modern photography. Admission is free the first Thursday of each month.
           </p>
@@ -45,7 +46,7 @@ export default function ArtPage() {
           <p>
             Good PDX will build out a curated guide to galleries, public art, open studios, and arts organizations — with a focus on emerging artists and underrepresented voices.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'Kenton — Good PDX Neighborhoods', description: 'A former company town built by a meatpacking industry, now anchored by a 31-foot Paul Bunyan statue and one of North Portland\'s most genuine commercial strips.' }
 const accent = '#2a1a3a'
 export default function KentonPage() {
@@ -15,6 +16,8 @@ export default function KentonPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/kenton">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -42,6 +45,8 @@ export default function KentonPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>Kenton was the site of one of Portland's most unusual civic experiments: in 2019 the city approved a tiny house village specifically for homeless veterans on a city-owned lot. It became a national model for similar programs.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.travelportland.com/neighborhoods/kenton/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Travel Portland — Kenton</a>
         </div>

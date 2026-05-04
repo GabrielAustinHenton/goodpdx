@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Wellness — Good PDX',
@@ -30,7 +31,7 @@ export default function WellnessPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="healthbeauty" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             Portland has a long tradition of alternative and integrative health — the city has more naturopathic doctors per capita than almost anywhere in the country, and institutions like <strong>National University of Natural Medicine</strong> (formerly NCNM) have trained practitioners here since 1956. Community acupuncture clinics, sliding-scale therapy practices, and neighborhood herbalists operate alongside conventional care throughout the city.
           </p>
@@ -43,7 +44,7 @@ export default function WellnessPage() {
           <p>
             A directory of wellness providers — gyms, studios, therapists, salons, and health practitioners — is coming. If you own a wellness business in Portland, <Link href="/sign-up" className="text-[#1a3a2a] hover:underline">join Good PDX</Link> to get listed.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

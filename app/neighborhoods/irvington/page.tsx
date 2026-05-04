@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'Irvington — Good PDX Neighborhoods', description: 'One of Portland\'s best-preserved historic districts — wide tree-lined streets, Victorian and Craftsman homes, and a neighborhood that has quietly been excellent for 130 years.' }
 const accent = '#2d5a3a'
 export default function IrvingtonPage() {
@@ -15,6 +16,8 @@ export default function IrvingtonPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/irvington">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -41,6 +44,8 @@ export default function IrvingtonPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>The Irvington neighborhood's deed restrictions from the 1880s explicitly excluded non-white buyers — a racial covenant common in Portland's most desirable neighborhoods. These covenants were ruled unenforceable by the Supreme Court in 1948, but their effect on Portland's racial geography persisted for decades.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.travelportland.com/neighborhoods/irvington/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Travel Portland — Irvington</a>
         </div>

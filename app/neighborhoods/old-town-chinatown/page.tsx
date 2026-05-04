@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'Old Town / Chinatown — Good PDX Neighborhoods', description: 'Portland\'s oldest neighborhood, the Saturday Market, the Lan Su Chinese Garden, and the complicated reality of a historic district under pressure.' }
 const accent = '#2a1a0a'
 export default function OldTownChinatownPage() {
@@ -15,6 +16,8 @@ export default function OldTownChinatownPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/old-town-chinatown">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -44,6 +47,8 @@ export default function OldTownChinatownPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>The Lan Su Chinese Garden was built with no nails — traditional joinery only. The rocks in the garden were shipped from Lake Tai in China. The garden's name translates as "Garden of Awakening Orchids."</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://lansugarden.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Lan Su Chinese Garden</a>
           <a href="https://www.portlandsaturdaymarket.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Portland Saturday Market</a>

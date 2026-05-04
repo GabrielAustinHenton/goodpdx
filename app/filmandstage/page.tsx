@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../components/EditableContent'
 
 export const metadata = {
   title: 'Film & Stage — Good PDX',
@@ -32,7 +33,7 @@ export default function FilmAndStagePage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <EditableContent pageSlug="filmandstage" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
           <p>
             <a href="https://www.pcs.org/" target="_blank" rel="noopener noreferrer" className="text-[#1a0a0a] hover:underline">Portland Center Stage</a> at the Armory is the city's flagship theater, housed in a historic National Guard armory that was renovated into one of the greenest theater buildings in the country. Their mainstage productions run alongside a second-stage series featuring newer and riskier work.
           </p>
@@ -45,7 +46,7 @@ export default function FilmAndStagePage() {
           <p>
             Good PDX will feature event listings, company profiles, and spotlight coverage of Portland's performing arts community.
           </p>
-        </div>
+        </EditableContent>
 
         <div className="mt-14 border-t border-gray-200 pt-10">
           <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Resources</h3>

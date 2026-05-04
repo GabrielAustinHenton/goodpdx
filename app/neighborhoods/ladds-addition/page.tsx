@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: "Ladd's Addition — Good PDX Neighborhoods", description: "Portland's oldest planned residential neighborhood — a diagonal street grid, four rose gardens, and a layout that defied its own surveyor." }
 const accent = '#4a2a1a'
 export default function LaddsAdditionPage() {
@@ -15,6 +16,8 @@ export default function LaddsAdditionPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/ladds-addition">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -42,6 +45,8 @@ export default function LaddsAdditionPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>The <a href="https://www.planning.org/greatplaces/neighborhoods/2009/laddsaddition.htm" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: accent }}>American Planning Association named Ladd's Addition one of America's Great Neighborhoods</a> in 2009.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.oregonencyclopedia.org/articles/ladd_s_addition_portland_/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Oregon Encyclopedia — Ladd's Addition</a>
           <a href="https://www.portland.gov/parks/ladd-circle-park-and-rose-gardens" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Ladd Circle Park — Portland Parks</a>

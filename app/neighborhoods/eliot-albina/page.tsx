@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, MapPin } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 export const metadata = { title: 'Eliot / Albina — Good PDX Neighborhoods', description: 'The center of Black Portland — built by the community that came north for the shipyards, broken up by urban renewal and a hospital expansion, and slowly rebuilding.' }
 const accent = '#3a1a0a'
 export default function EliotAlbinaPage() {
@@ -15,6 +16,8 @@ export default function EliotAlbinaPage() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-5 py-14 space-y-10">
+        <EditableContent pageSlug="neighborhoods/eliot-albina">
+        <div className="space-y-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">History</h2>
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -43,6 +46,8 @@ export default function EliotAlbinaPage() {
             <li className="flex gap-3"><span className="text-lg">→</span><span>The Eliot neighborhood is named after Thomas Lamb Eliot, a Unitarian minister who founded several Portland charitable institutions in the late 19th century — including what would become the Oregon Historical Society. He was progressive by the standards of his time, though the neighborhood named after him endured some of the most severe racial injustice in the city's history.</span></li>
           </ul>
         </section>
+        </div>
+        </EditableContent>
         <div className="pt-8 border-t border-gray-200 flex flex-wrap gap-4">
           <a href="https://www.albinavision.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Albina Vision Trust</a>
           <a href="https://www.eliotoralhistories.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm hover:underline" style={{ color: accent }}><ExternalLink className="w-4 h-4" /> Eliot Oral Histories</a>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
+import EditableContent from '../../components/EditableContent'
 
 export const metadata = {
   title: 'The People Before Portland — Good PDX',
@@ -41,7 +42,7 @@ export default function ThePeopleBeforePage() {
 
       {/* Article */}
       <div className="max-w-3xl mx-auto px-5 py-14">
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
+        <EditableContent pageSlug="history/the-people-before" className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">This Ground, Before the City</h2>
@@ -129,7 +130,7 @@ export default function ThePeopleBeforePage() {
               </li>
             ))}
           </ul>
-        </div>
+        </EditableContent>
 
         <div className="mt-10 pt-10 border-t border-gray-200">
           <Link href="/history" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4a2f] hover:text-[#2d6a4f]">
