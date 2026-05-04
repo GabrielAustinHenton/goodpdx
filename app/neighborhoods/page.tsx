@@ -3,7 +3,7 @@ import { ArrowLeft, MapPin } from 'lucide-react'
 
 export const metadata = {
   title: 'Portland Neighborhoods — Good PDX',
-  description: 'Portland has 95 officially recognized neighborhoods. Here are 18 of the most distinct, storied, and worth knowing.',
+  description: 'Portland has 94 officially recognized neighborhoods. Here are the most distinct, storied, and worth knowing.',
 }
 
 const neighborhoods = [
@@ -25,6 +25,16 @@ const neighborhoods = [
   { name: 'Kenton', slug: 'kenton', tagline: 'A former company town with a giant Paul Bunyan statue and a DIY community spirit.', quadrant: 'N' },
   { name: 'Goose Hollow', slug: 'goose-hollow', tagline: 'Providence Park, a governor\'s house, and one of Portland\'s oldest neighborhood names.', quadrant: 'SW' },
   { name: 'Concordia', slug: 'concordia', tagline: 'Quiet streets, community gardens, and a stretch of Alberta that the tourists haven\'t fully discovered.', quadrant: 'NE' },
+  { name: 'Buckman', slug: 'buckman', tagline: 'One of Portland\'s oldest neighborhoods, home to OMSI and a dense creative community just east of the Willamette.', quadrant: 'SE' },
+  { name: 'Sunnyside', slug: 'sunnyside', tagline: 'The Belmont corridor, the Bagdad Theater, and a neighborhood that has been getting brunch right for decades.', quadrant: 'SE' },
+  { name: 'Foster-Powell', slug: 'foster-powell', tagline: 'FoPo went from overlooked to one of Portland\'s most talked-about neighborhoods in under a decade.', quadrant: 'SE' },
+  { name: 'Hollywood', slug: 'hollywood', tagline: 'A 1926 movie palace, a major MAX hub, and a Sandy Boulevard strip that has held its character through a century of change.', quadrant: 'NE' },
+  { name: 'Grant Park', slug: 'grant-park', tagline: 'Beverly Cleary grew up here. Ramona Quimby lived here. A quiet NE neighborhood with a surprisingly outsized literary legacy.', quadrant: 'NE' },
+  { name: 'Beaumont-Wilshire', slug: 'beaumont-wilshire', tagline: 'Beaumont Village on NE Fremont — one of Portland\'s most charming neighborhood commercial strips, on a ridge with views to match.', quadrant: 'NE' },
+  { name: 'Multnomah Village', slug: 'multnomah-village', tagline: 'A former independent city tucked into SW Portland\'s hills, with a main street that still feels like 1928.', quadrant: 'SW' },
+  { name: 'University Park', slug: 'university-park', tagline: 'Home to the University of Portland on a bluff above the Willamette — views, quiet streets, and a campus-town feel.', quadrant: 'N' },
+  { name: 'Portsmouth', slug: 'portsmouth', tagline: 'A working-class North Portland neighborhood with deep roots, genuine diversity, and Peninsula Park.', quadrant: 'N' },
+  { name: 'Cully', slug: 'cully', tagline: 'Oregon\'s most racially diverse neighborhood — immigrants, organizers, and urban farmers building something that lasts.', quadrant: 'NE' },
 ]
 
 const quadrantColors: Record<string, string> = {
@@ -46,7 +56,7 @@ export default function NeighborhoodsPage() {
           <div className="text-xs font-bold uppercase tracking-widest text-green-400 mb-4">Neighborhoods</div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">Portland Neighborhoods</h1>
           <p className="text-green-100/70 text-lg leading-relaxed max-w-2xl">
-            Portland has 94 officially recognized neighborhoods. These 18 are among the most distinct, most storied, and most worth understanding — each one a different version of what this city is.
+            Portland has 94 officially recognized neighborhoods. These are among the most distinct, most storied, and most worth understanding — each one a different version of what this city is.
           </p>
         </div>
       </div>
